@@ -23,3 +23,6 @@ pnpm-debug.log*
 # sublime-text files
 project-site.sublime-project
 project-site.sublime-workspace
+
+# vs code files
+.vscode/
