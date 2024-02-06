@@ -11,7 +11,7 @@ function createDayNightChart(data) {
 	const ctx = document.getElementById("day-night");
 	// set color for graph elements based on theme
 	let drawColour = localStorage.theme === "dark" ? "#fdebf3" : "#1e1e2e";
-	let graphTitle = "Daily Average: First 5 Months";
+	let graphTitle = "Nappy changes and feeds: First 5 Months";
 	let graphOptions = {
 		scales: {
 			r: {
@@ -147,8 +147,8 @@ function createDayNightChart(data) {
 		// set new graph title
 		let graphTitle =
 			chartDataLabel === "firstFiveMonths"
-				? "Daily Average: 6 to 12 Months"
-				: "Daily Average: First 5 Months";
+				? "Nappy changes and feeds: 6 to 12 Months"
+				: "Nappy changes and feeds: First 5 Months";
 		let useData =
 			chartDataLabel === "firstFiveMonths"
 				? configSixMonths

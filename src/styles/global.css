@@ -44,6 +44,7 @@ p {
     hyphens: auto;
     line-height: 1.5;
     text-indent: 1em;
+    margin: 0.75em auto;
 }
 
 small {
