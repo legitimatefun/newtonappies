@@ -1,0 +1,118 @@
+---
+import Layout from '../layouts/Layout.astro';
+const pageTitle = "First Year";
+---
+
+<Layout pageTitle={pageTitle}>
+    <div class="gif">
+        <img
+            width="350"
+            height="259"
+            alt="cartoon rainbox"
+            src="/rainbow.png"
+        />
+    </div>
+    <h1>First Year with Bub</h1>
+    <small>Real world data on what to expect</small>
+    <p>
+        We were very excited when we were expecting our first born. We got lots
+        of stories and advice (some unsolicited) from parents, friends,
+        relatives. We were always left wondering what our day-to-day would look
+        like like how many nappy changes would we need to do or how many times
+        would our newborn need feeding?
+    </p>
+    <p>
+        We kept a log of every feed, wee, poo and vomit in response to Doctors
+        request for this information every visit (we both work in data). After
+        just over a year, the log contained 2,412 entries and we realised it
+        answered many of our initial questions. After processing the data and
+        knowing it only represents one child here are the takeouts that suprised
+        us and would like to share.
+    </p>
+    <h2>Nappy Changes!</h2>
+    <canvas
+        id="nappy-changes"
+        height="350rem"
+        aria-label="A graph showing number of nappies changed in the first year."
+    >
+        <p>A graph showing number of nappies changed in the first year.</p>
+    </canvas>
+    <h3 id="nappy-changes-heading"></h3>
+    <p>
+        Six nappy changes a day, on average. Most nappy changes coincided with a
+        feed (except for the smelly ones). After the first month, it became
+        second nature. After the second month we could get a nappy change done
+        in the same time as an F1 pit stop. Nappy changes were more frequent in
+        the first six months.
+    </p>
+    <h2>Feeds, Wees, Poos and Vomit</h2>
+    <canvas
+        id="total-events"
+        height="350rem"
+        aria-label="A graph showing the number of feeds, wees, poos and vomits in the first year"
+    >
+        <p>A graph showing number of nappies changed in the first year.</p>
+    </canvas>
+    <p>
+        Vomits were uncommon, contrary to what everyone told us. Vomits did
+        usually result in a change of clothes for everyone involved. Vomits were
+        usually clumped together (many in a day usually in response to
+        vaccinations or introducing new foods) rather than spread out over time.
+        Poos occur more than once a day however, nappy changes became second
+        nature, see above.
+    </p>
+    <p>
+        Feeding and eating is very frequent and settled into a regular routine
+        that we learnt to plan around it.
+    </p>
+    <h2>Days and Nights</h2>
+    <canvas
+        id="day-night"
+        height="350rem"
+        aria-label="A graph showing the frequency of having to get up between midnight and 6 a.m. compared to other times."
+    >
+        <p>
+            A graph showing the frequency of having to get up between midnight
+            and 6 a.m. compared to other times.
+        </p>
+    </canvas>
+    <div class="center">
+        <button id="dayNightData">Change Time Period</button>
+    </div>
+    <p>
+        We only needed feed or change our baby 1.4 times on average per night
+        then falling to 0.9 times. While this seems small for the first five
+        months we were up every night except for nine nights, twice for 59
+        nights (nearly two months!) and were up one night four times. This
+        doesn't include the times where our baby woke up or the times we sat
+        staring at the baby monitor freaking out something bad was about to
+        happen. It is true, sleep is hard to come by in the early months.
+    </p>
+    <p>
+        The data is split at six months because our bub started sleeping longer
+        and <em>sometimes</em> through the night. Normal development like not
+        needing to eat so frequently probably explains why. We parents did start
+        to get more sleep after the fist six months.
+    </p>
+    <p>
+        Our bub did develop their own qwerks like sleeping soundly up until
+        about 2 a.m. and jumping out of bed at 5 a.m. every day. We adjusted to
+        his sleep schedule and we both think 5 a.m. is normal now. How life
+        changes!
+    </p>
+    <h2>Our Bub</h2>
+    <p>
+        Our bub is very healthy and happy child that we love and adore. The hard
+        and difficult moments of raising a newborn are easy to describe but the
+        love, fun and excitement we share as a family is indescribable. We share
+        this information to say using data that the day to day challenges are
+        manageable.
+    </p>
+    <p>All code is for this site and data analysis is available on github.</p>
+</Layout>
+
+<script>
+    import "../clientScripts/nappyChanges";
+    import "../clientScripts/totalEvents";
+    import "../clientScripts/dayNight";
+</script>

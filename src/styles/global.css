@@ -1,0 +1,270 @@
+/* Global styles */
+html {
+    background-color: #1e1e2e;
+    color: #fdebf3;
+}
+
+body {
+    max-width: 540px;
+    margin: 0 auto;
+    text-align: justify;
+}
+
+/* Headings */
+h1, h2 {
+    font-family: 'Pacifico', cursive;
+    font-weight: normal;
+}
+
+h1 {
+    font-size: 2.6em;
+    margin: 0;
+}
+
+h2 {
+    text-decoration: underline #375a7f;
+    text-decoration-thickness: 4px;
+    text-underline-offset: 6px;
+    font-size: 2.1em;
+    margin-bottom: 0.5em;
+}
+
+h3 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.6em;
+    hyphens: auto;
+    text-align: center;
+    margin-bottom: 0.25em;
+}
+
+/* Paragraphs */
+p {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.1em;
+    hyphens: auto;
+    line-height: 1.5;
+    text-indent: 1em;
+}
+
+small {
+    background-color: #584966;
+    color: #fdebf3;
+    border-radius: 6px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 600;
+    padding: 0.3em 0.6em 0.2em;
+}
+
+#bar-graph {
+    margin-bottom: 2%;
+}
+
+/* Positioning Day Night Data Button */
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Day Night Data Button */
+
+button {
+    color: #fdebf3;
+    border: 2px solid #fdebf3;
+}
+
+#dayNightData {
+  background-color: transparent;
+  border-radius: 15px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.9em;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+  min-height: 60px;
+  min-width: 0;
+  outline: none;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 40%;
+  will-change: transform;
+}
+
+#dayNightData:disabled {
+  pointer-events: none;
+}
+
+#dayNightData:hover {
+  color: #fff; 
+  background-color: #1A1A1A; 
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+#dayNightData:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+
+/* Images and svg - my additions */
+.images {
+    border-radius: 2%;
+    margin-bottom: 2%;
+    max-width: 100%;
+    height: auto;
+    }
+
+/* Gifs */
+.gif {
+    margin: 20px 0 0 0;
+    text-align: center;
+}
+
+/* Navigation Bar */
+.nav-bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 0.8rem;
+}
+
+.title-link, .nav-links {
+    font-family: 'Pacifico', cursive;
+    font-size: 1.3rem;
+}
+
+.title-link a, .nav-links a {
+    color: #fdebf3;
+    text-decoration: none;
+}
+
+.title-link a:hover, .nav-links a:hover, a:focus {
+    text-decoration: underline #375a7f;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 6px;
+}
+
+.nav-links {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.1rem;
+    text-align: right;
+}
+
+.nav-links a {
+    margin: 0 13px;
+}
+
+/* Footer */
+.foot-btn {
+    display: flex;
+    padding: 20px;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: 5px solid white;
+}
+
+.foot-btn:hover {
+    background-color: lightskyblue;
+}
+
+.light .foot-btn {
+    border: 5px solid black;
+}
+
+.git-icon {
+    content: url("/github-mark-white.svg");
+}
+
+.mail-icon {
+    content: url("/mail-white.svg");
+}
+
+.linked-in {
+    content: url("/li-in-white.png");
+}
+
+/* Card listing */
+.link-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+    gap: 1rem;
+    padding: 0;
+}
+
+/* Theme Icon */
+html.light {
+    background-color: #fdebf3;
+    color: #1e1e2e;
+}
+
+.light .title-link a {
+    color: #1e1e2e;
+}
+
+.light .card-title {
+    color: #1e1e2e; 
+}
+
+.light .card-txt {
+    color: #1e1e2e; 
+}
+
+.light .nav-links a {
+    color: #1e1e2e;
+}
+
+.light .link-card > a {
+    color: #1e1e2e; 
+}
+
+.light button {
+    color: #1e1e2e;
+    border: 2px solid #1e1e2e;
+}
+
+.light button:hover {
+    color: #fdebf3;
+}
+
+.light .git-icon {
+    content: url("/github-mark.svg");
+}
+
+.light .mail-icon {
+    content: url("/mail.svg");
+}
+
+.light .linked-in {
+    content: url("/li-in.png");
+}
+
+/* Media Query */
+@media only screen and (max-width: 600px) {
+    body {
+        width: 320px;
+    }
+
+    .nav-bar {
+        display: initial;
+    }
+
+    .title-link {
+        text-align: center;
+    }
+
+    .nav-links {
+        text-align: center;
+    }
+
+    .nav-links a {
+        margin: 0 11px;
+    }
+}

@@ -1,0 +1,19 @@
+---
+import Layout from '../layouts/Layout-Error-Page.astro';
+import { Image } from 'astro:assets';
+import Taylor from '../images/ts-404.gif';
+// import '@fontsource/archivo-black';
+const pageTitle = "This is not the page you are looking for";
+---
+
+<Layout pageTitle={pageTitle}>
+    <h1 style="text-align: center;">Page Doesn't Exist!</h1>
+    <div class="image-container">
+        <Image width="250" src={Taylor} alt="Taylor Swift screaming in frustration"  style="padding-left:20%;"/>
+    </div>
+</Layout> 
+
+<style>
+ 
+
+</style>
