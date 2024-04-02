@@ -3,8 +3,25 @@ import { Chart } from "chart.js/auto";
 fetch("./total_events.json")
 	.then((response) => response.json())
 	.then((data) => {
-		// call function to create graph
-		createEventsChart(data);
+		// options used to delay animation start
+		let options = {
+			rootMargin: "0px",
+			threshold: 1.0,
+		};
+		// create observer
+		let observer = new IntersectionObserver(callfunc, options);
+		let target = document.getElementById("total-events");
+		observer.observe(target);
+		// callback function. when graph container visible, graph is then drawn
+		function callfunc(entries) {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					// call function to create graph
+					createEventsChart(data);
+					observer.unobserve(target); // once drawn turn off observer
+				}
+			});
+		}
 	});
 
 function createEventsChart(data) {
@@ -105,10 +122,8 @@ function createEventsChart(data) {
 	// handle user theme changes
 	function updateChartTheme() {
 		// pick correct colour based off theme selected by user
-		drawColour =
-			localStorage.theme === "dark" ? "#fdebf3" : "#1e1e2e";
-		barColour =
-			localStorage.theme === "dark" ? "#fdebf3" : "#333333";
+		drawColour = localStorage.theme === "dark" ? "#fdebf3" : "#1e1e2e";
+		barColour = localStorage.theme === "dark" ? "#fdebf3" : "#333333";
 		// update events chart - some options need to be repeated to override defaults
 		eventsChart.options = {
 			indexAxis: "y",
@@ -171,7 +186,7 @@ function createEventsChart(data) {
 			},
 		};
 		eventsChart.update();
-	};
+	}
 	document
 		.getElementById("themeToggle")
 		.addEventListener("click", updateChartTheme);

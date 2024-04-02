@@ -29,8 +29,27 @@ fetch("./nappy_changes.json")
         });
         return data;
     })
+    // use my event listener set up below
     .then((data) => {
-        createNappyChart(data);
+        // options used to delay animation start
+        let options = {
+            rootMargin: "0px",
+            threshold: 1.0,
+        };
+        // create observer
+        let observer = new IntersectionObserver(callfunc, options);
+        let target = document.getElementById("nappy-changes");
+        observer.observe(target);
+        // callback function. when graph container visible, graph is then drawn
+        function callfunc(entries) {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    // call function to create graph
+                    createNappyChart(data);
+                    observer.unobserve(target); // once drawn turn off observer
+                }
+            });
+        }
         // append total nappy changes to heading after line graph animation completes
         setTimeout(() => {
             const totalNappies = data[data.length - 1]["Count"];

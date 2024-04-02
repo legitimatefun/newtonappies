@@ -3,7 +3,26 @@ import { Chart } from "chart.js/auto";
 fetch("./day_night.json")
 	.then((response) => response.json())
 	.then((data) => {
-		createDayNightChart(data);
+		// options used to delay animation start
+		let options = {
+			rootMargin: "200px",
+			threshold: 1.0,
+		};
+		// create observer
+		let observer = new IntersectionObserver(callfunc, options);
+		let target = document.getElementById("day-night");
+		observer.observe(target);
+		// callback function. when graph container visible, graph is then drawn
+		function callfunc(entries) {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					console.log(entry);
+					// call function to create graph
+					createDayNightChart(data);
+					observer.unobserve(target); // once drawn turn off observer
+				}
+			});
+		}
 	});
 
 function createDayNightChart(data) {
@@ -54,7 +73,7 @@ function createDayNightChart(data) {
 				boxPadding: 2,
 				callbacks: {
 					label: function (context) {
-						let rParsed = context.parsed.r
+						let rParsed = context.parsed.r;
 						let label = `${rParsed.toFixed(3)}`;
 						return label;
 					},
